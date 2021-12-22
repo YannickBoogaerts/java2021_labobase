@@ -17,11 +17,12 @@ public class Main {
         MenuModelDynamic model = new MenuModelDynamic(listItem, provider, "Menu Dynamique");
         MenuControler menu = factory.createMenu(model);
 
-        //ajout d'un item au menu
+        //ajout d'items au menu
         listItem.add("retour");
+        listItem.add("item 1");
         // test
         Callable action = menu.getAction();
-        int cpt = 0;
+        int cpt = 1;
         while(action != null){
             action.call();
             cpt++;
