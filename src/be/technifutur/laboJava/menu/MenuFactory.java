@@ -1,5 +1,6 @@
 package be.technifutur.laboJava.menu;
 
+import java.util.List;
 import java.util.concurrent.Callable;
 
 public class MenuFactory {
@@ -17,5 +18,9 @@ public class MenuFactory {
         item.setName(name);
         return item;
 
+    }
+
+    public MenuControler createDynamicMenu(List<String> listItem, ActionProvider provider, String name) {
+        return createMenu(new MenuModelDynamic(listItem,provider,name));
     }
 }
